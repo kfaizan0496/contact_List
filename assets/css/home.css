@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    background-color: lightcoral;
+    text-align: center;
+
+}
+#container{
+    margin-top: 20px;
+    background-color: white;
+   
+}
+#lists{
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+   justify-content: center;
+   margin-left: 25%;
+   
+   
+  
+}
+
+ul li{
+    list-style: none;
+
+}
+#contacts{
+    display: inline-block;
+    margin: 0px 5px 0px 5px;
+   width: 30%;
+   justify-content: center;
+   
+}
+.delete-button{
+    display: inline-block;
+}
