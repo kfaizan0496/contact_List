@@ -2,13 +2,14 @@ const express=require('express');
 
 const dotEnv=require('dotenv');
 dotEnv.config();
-const PORT=process.env;
+const {PORT}=process.env
+const port=PORT || 8000;
 
- PORT=PORT || 8000;
 
 const path=require('path');
 const  db=require('./config/mongoose');
 const Contact=require('./models/contactList');
+// const { prototype } = require('module');
 const app=express();
 app.use(express.urlencoded()) 
 app.set('view engine','ejs');
@@ -105,11 +106,9 @@ app.post('/create-contacts',async function(req,res){
       
 })
 
-app.listen(port,function(err){
-    if(err){
-        console.log("Error occur",err);
-     
+app.listen(port, (err) => {
+    if (err) {
+      console.log(`Error in running the server: ${err}`);
     }
-    console.log("yup!! My Express is running",port)
-}
-)
+    console.log(`Server is running on port: ${port}`);
+  });
