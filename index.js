@@ -1,5 +1,11 @@
 const express=require('express');
-const port=8000;
+
+const dotEnv=require('dotenv');
+dotEnv.config();
+const PORT=process.env;
+
+ PORT=PORT || 8000;
+
 const path=require('path');
 const  db=require('./config/mongoose');
 const Contact=require('./models/contactList');
